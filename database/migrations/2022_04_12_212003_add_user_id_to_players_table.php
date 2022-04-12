@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCommunitiesTable extends Migration
+class AddUserIdToPlayersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateCommunitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('communities', function (Blueprint $table) {
-            $table->increments('id');
-            $table->text('name');
-            $table->text('body')->nullable();
-            $table->binary('image')->nullable();
+        Schema::table('players', function (Blueprint $table) {
+            $table->integer('user_id')->unsigned()->nullable();
         });
     }
 
@@ -28,6 +25,8 @@ class CreateCommunitiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('communities');
+        Schema::table('players', function (Blueprint $table) {
+            //
+        });
     }
 }

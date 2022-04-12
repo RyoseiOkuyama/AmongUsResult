@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCommunitiesTable extends Migration
+class AddCommunityIdToResultsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateCommunitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('communities', function (Blueprint $table) {
-            $table->increments('id');
-            $table->text('name');
-            $table->text('body')->nullable();
-            $table->binary('image')->nullable();
+        Schema::table('results', function (Blueprint $table) {
+            $table->integer('community_id')->unsigned();
         });
     }
 
@@ -28,6 +25,8 @@ class CreateCommunitiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('communities');
+        Schema::table('results', function (Blueprint $table) {
+            //
+        });
     }
 }

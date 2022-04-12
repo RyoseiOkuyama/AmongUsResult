@@ -7,12 +7,12 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>Blog Name</h1>
+        <h1>community一覧</h1>
         <div class='posts'>
-            @foreach ($Communities as $community)
+            @foreach ($communities as $community)
                 <div class='community'>
-                    <h2 class='a'>{{ $community->id }}</h2>
-                    <p class='body'>{{ $community->name }}</p>
+                    <h2 class='id'>{{ $community->id }}</h2>
+                    <p class='body'>名前：{{ $community->name }}</p>
                 </div>
             @endforeach
         </div>

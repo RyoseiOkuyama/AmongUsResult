@@ -11,16 +11,20 @@ class communitiesSeeder extends Seeder
      */
     public function run()
     {
-        DB:table('communities')->insert([
-            'name' => 'グループ1',
-        ],
+        $communities = [
+            [
+                'name' => 'グループ1',
+                'body' => 'テスト',
+                'image' => null,
+            ],
+            
+            [
+                'name' => 'グループ2',
+                'body' => 'テスト2',
+                'image' => null,
+            ],
+        ];
         
-        [
-            'name' => 'グループ2',
-        ],
-        
-        [
-            'name' => 'グループ3',
-        ]);
+        DB::table('communities')->insert($communities);
     }
 }
