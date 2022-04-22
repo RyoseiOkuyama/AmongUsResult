@@ -16,6 +16,8 @@ class CreateResultsTable extends Migration
         Schema::create('results', function (Blueprint $table) {
             $table->increments('id');
             $table->string('winner');
+            $table->integer('community_id')->unsigned();
+            $table->integer('regulation_id')->unsigned();
         });
     }
 

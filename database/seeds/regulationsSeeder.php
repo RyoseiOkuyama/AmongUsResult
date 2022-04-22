@@ -29,7 +29,7 @@ class regulationsSeeder extends Seeder
                 'impostornumber' => 2,
                 'madmatenumber' => 0,
                 'comment' => '10人2狼',
-                'community_id' => 2,
+                'community_id' => 1,
             ],
         ];
         

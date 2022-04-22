@@ -6,6 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Community extends Model
 {
+    public $timestamps = false;
+    
+    protected $fillable = [
+        'id',
+        'name',
+        'body',
+        'image',
+    ];
+    
     public function players()
     {
         return $this->hasMany('App\Player');

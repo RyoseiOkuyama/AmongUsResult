@@ -15,74 +15,45 @@ class resultsSeeder extends Seeder
             [
                 'winner' => 'clue',
                 'community_id' => 1,
-                'used_regulation' => 1,
-            ],
-            
-            [
-                'winner' => 'clue',
-                'community_id' => 1,
-                'used_regulation' => 1,
-            ],
-            
-            [
-                'winner' => 'clue',
-                'community_id' => 1,
-                'used_regulation' => 1,
-            ],
-            
-            [
-                'winner' => 'clue',
-                'community_id' => 1,
-                'used_regulation' => 1,
-            ],
-            
-            [
-                'winner' => 'clue',
-                'community_id' => 1,
-                'used_regulation' => 1,
-            ],
-            
-            [
-                'winner' => 'clue',
-                'community_id' => 1,
-                'used_regulation' => 1,
+                'regulation_id' => 1,
             ],
             
             [
                 'winner' => 'impostor',
                 'community_id' => 1,
-                'used_regulation' => 1,
+                'regulation_id' => 1,
             ],
             
             [
                 'winner' => 'clue',
-                'community_id' => 2,
-                'used_regulation' => 2,
+                'community_id' => 1,
+                'regulation_id' => 1,
             ],
             
             [
                 'winner' => 'clue',
-                'community_id' => 2,
-                'used_regulation' => 2,
+                'community_id' => 1,
+                'regulation_id' => 1,
             ],
             
             [
                 'winner' => 'clue',
-                'community_id' => 2,
-                'used_regulation' => 2,
+                'community_id' => 1,
+                'regulation_id' => 1,
             ],
             
             [
                 'winner' => 'clue',
-                'community_id' => 2,
-                'used_regulation' => 2,
+                'community_id' => 1,
+                'regulation_id' => 2,
             ],
             
             [
                 'winner' => 'impostor',
-                'community_id' => 2,
-                'used_regulation' => 2,
+                'community_id' => 1,
+                'regulation_id' => 2,
             ],
+            
         ];
         
         DB::table('results')->insert($results);

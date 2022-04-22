@@ -17,6 +17,7 @@ class CreatePlayerResultTable extends Migration
             $table->integer('player_id') ->unsigned();
             $table->integer('result_id') ->unsigned();
             $table->primary(['player_id', 'result_id']);
+            $table->string('role')->default('clue');
         });
     }
 

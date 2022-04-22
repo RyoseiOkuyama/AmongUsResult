@@ -21,6 +21,7 @@ class CreateRegulationsTable extends Migration
             $table->integer('impostornumber')->nullable();
             $table->integer('madmatenumber')->nullable();
             $table->text('comment')->nullable();
+            $table->integer('community_id')->unsigned();
         });
     }
 

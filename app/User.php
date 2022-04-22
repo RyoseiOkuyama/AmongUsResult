@@ -6,6 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
 {
+    public $timestamps = false;
+    
+    protected $fillable = [
+        'id',
+        'clue',
+        'sheriff',
+        'madmate',
+        'impostor',
+        'community_id',
+        'color',
+    ];
+    
     public function communities()
     {
         return $this->belongsToMany('App\Community');

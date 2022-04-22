@@ -17,12 +17,6 @@ class communitiesSeeder extends Seeder
                 'body' => 'テスト',
                 'image' => null,
             ],
-            
-            [
-                'name' => 'グループ2',
-                'body' => 'テスト2',
-                'image' => null,
-            ],
         ];
         
         DB::table('communities')->insert($communities);

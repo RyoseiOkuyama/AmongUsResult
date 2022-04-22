@@ -6,6 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Result extends Model
 {
+    public $timestamps = false;
+    
+    protected $fillable = [
+        'id',
+        'community_id',
+        'used_regulation',
+        'winner'
+    ];
+        
     public function players()
     {
         return $this->belongsToMany('App\Player');

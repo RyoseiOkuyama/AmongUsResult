@@ -15,108 +15,93 @@ class playersSeeder extends Seeder
         $players = [
             [
                 'name' => 'ゲスト1',
-                'color' => '青',
+                'color' => '#ff0000',
                 'community_id' => 1,
-                'user_id' => 1,
             ],
         
         
             [
                 'name' => 'ゲスト2',
-                'color' => '緑',
+                'color' => '#000000',
                 'community_id' => 1,
-                'user_id' => 2,
             ],
         
             [
                 'name' => 'ゲスト3',
-                'color' => '黒',
+                'color' => '#ffffff',
                 'community_id' => 1,
-                'user_id' => null,
             ],
         
             [
                 'name' => 'ゲスト4',
-                'color' => '赤',
+                'color' => '#D34778',
                 'community_id' => 1,
-                'user_id' => null,
             ],
         
             [
                 'name' => 'ゲスト5',
-                'color' => '紫',
+                'color' => '#0000ff',
                 'community_id' => 1,
-                'user_id' => null,
             ],
         
             [
                 'name' => 'ゲスト6',
-                'color' => 'コーラル',
+                'color' => '#00ffff',
                 'community_id' => 1,
-                'user_id' => null,
             ],
         
             [
                 'name' => 'ゲスト7',
-                'color' => '灰',
+                'color' => '#ff00ff',
                 'community_id' => 1,
-                'user_id' => null,
             ],
         
             [
                 'name' => 'ゲスト8',
-                'color' => '水',
+                'color' => '#800080',
                 'community_id' => 1,
-                'user_id' => null,
             ],
         
             [
                 'name' => 'ゲスト9',
-                'color' => 'オレンジ',
+                'color' => '#008000',
                 'community_id' => 1,
-                'user_id' => null,
             ],
         
             [
                 'name' => 'ゲスト10',
-                'color' => 'ピンク',
+                'color' => '#ffa500',
                 'community_id' => 1,
-                'user_id' => null,
             ],
         
             [
                 'name' => 'ゲスト11',
-                'color' => '白',
+                'color' => '#ffdb2b',
                 'community_id' => 1,
-                'user_id' => null,
             ],
         
             [
                 'name' => 'ゲスト12',
-                'color' => '黄緑',
+                'color' => '#ff7f50',
                 'community_id' => 1,
-                'user_id' => null,
             ],
         
             [
                 'name' => 'ゲスト13',
-                'color' => '黄',
+                'color' => '#00ff00',
                 'community_id' => 1,
-                'user_id' => null,
             ],
         
             [
                 'name' => 'ゲスト14',
-                'color' => '薄ピンク',
+                'color' => '#808080',
                 'community_id' => 1,
-                'user_id' => null,
             ],
         
             [
                 'name' => 'ゲスト15',
-                'color' => '青',
+                'color' => '#800000',
                 'community_id' => 1,
-                'user_id' => null,
             ],
         ];
         
