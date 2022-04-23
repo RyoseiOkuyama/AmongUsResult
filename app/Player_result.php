@@ -18,4 +18,9 @@ class Player_result extends Model
     {
         return $this->belongsTo('App\Player');
     }
+    
+    public function result()
+    {
+        return $this->belongsTo('App\Result');
+    }
 }

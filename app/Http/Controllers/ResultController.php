@@ -15,27 +15,29 @@ class ResultController extends Controller
 {
     public function index(community $community, result $result, regulation $regulation)
     {
-        return view('results/index')->with(['communities' => $community->get()])->with(['results' => $result->get()])->with(['regulations' => $regulation->get()]);
+        
+        
+        return view('results/result_index')->with(['communities' => $community->get()])->with(['results' => $result->get()])->with(['regulations' => $regulation->get()]);
     }
     
     public function create1(community $community, regulation $regulation)
     {
-        return view('results/create1')->with(['communities' => $community->get()])->with(['regulations' => $regulation->get()]);
+        return view('results/result_create1')->with(['communities' => $community->get()])->with(['regulations' => $regulation->get()]);
     }
     
     public function store1(Request $request, Result $result, Community $community, Regulation $regulation)
     {
-        return view('/results/create2' . $result->id);
+        return view('/results/result_create2' . $result->id);
     }
     
     public function show(Result $result)
     {
-        return view('results/show')->with(['result' => $result]);
+        return view('results/result_show')->with(['result' => $result]);
     }
     
     public function create2(Community $community, Regulation $regulation, Result $result, Player $player)
     {
-        return view('/results/create2')->with(['result' => $result])->with(['community' => $community])->with(['regulation' => $regulation])->with(['player' => $player]);
+        return view('/results/result_create2')->with(['result' => $result])->with(['community' => $community])->with(['regulation' => $regulation])->with(['player' => $player]);
     }
     
     public function store(Request $request, Result $result, Community $community, Regulation $regulation,)

@@ -13,9 +13,9 @@
                         <image src="/images/among us.webp" height="100" alt="among us ロゴ"></image>
                     </a>
                 </figure>
-                <a href='/results/create1' class='header-link'><p>戦績登録</p></a>
-                <a href='/communities/index' class='header-link'><p>コミュニティ一覧</p></a>
-                <a href='/communities/create' class='header-link'><p>コミュニティ作成</p></a>
+                <a href='/results/result_create1' class='header-link'><p>戦績登録</p></a>
+                <a href='/communities/community_index' class='header-link'><p>コミュニティ一覧</p></a>
+                <a href='/communities/community_create' class='header-link'><p>コミュニティ作成</p></a>
             </div>
         </header> 
         <div class='contents'>

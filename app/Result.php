@@ -11,7 +11,7 @@ class Result extends Model
     protected $fillable = [
         'id',
         'community_id',
-        'used_regulation',
+        'regulation_id',
         'winner'
     ];
         
@@ -28,5 +28,10 @@ class Result extends Model
     public function regulation()
     {
         return $this->belongsTo('App\Regulation');
+    }
+    
+    public function player_results()
+    {
+        return $this->hasMany('App\Player_result');
     }
 }

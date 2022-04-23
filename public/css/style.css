@@ -1,14 +1,11 @@
 body {
     padding: 0px;
     margin: 0px;
+    background-color: #d8d8d8;
 }
 
-.contents,.footer {
-    background-color: #e0e0e0;
-}
-
-.footer {
-    padding: 0px;
+.main {
+    padding-top: 200px;
 }
 
 a {
@@ -23,26 +20,29 @@ header {
     position: fixed;
     top: 0; 
     background-color: black;
-    float: left;
     width: 100%;
     z-index: 10;
-}
-
-.contents {
-    padding-top: 150px;
 }
 
 .logo {
     background-color: black;
     float: left;
-    height: 100px;
+    height: 80px;
+    width: auto;
 }
 
-.header-link {
-    float: left;
-    font-size: 20px;
+.header_link, .user_link{
     color: white;
-    padding: 40px 30px;
+    padding: 30px 30px;
+    font-size: 20px;
+}
+
+.header_link {
+    float: left;
+}
+
+.user_link {
+    float: right;
 }
 
 .name {
@@ -67,6 +67,6 @@ header {
 }
 
 .player_informations {
-    float: left;
+    text-align: center;
 }
 
