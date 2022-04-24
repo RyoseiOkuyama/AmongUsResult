@@ -1,23 +1,6 @@
-<html lang="{{ str_replace("_", "-", app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>ShowRegulation</title>
-        <link href="/css/style.css" rel="stylesheet">
-    </head>
-    <body>
-        <header>
-            <div class="header">
-                <figure class="logo">
-                    <a href='/'>
-                        <image src="/images/among us.webp" height="100" alt="among us ロゴ"></image>
-                    </a>
-                </figure>
-                <a href='/results/result_create1' class='header-link'><p>戦績登録</p></a>
-                <a href='/communities/community_index' class='header-link'><p>コミュニティ一覧</p></a>
-                <a href='/communities/community_create' class='header-link'><p>コミュニティ作成</p></a>
-            </div>
-        </header> 
+@extends('results.result_index')
+    
+@section('content') 
         <div class='contents'>
             <h1 class="title">
                 {{ $regulation->id }}
@@ -30,11 +13,8 @@
                 <p>インポスターの人数:{{ $regulation->impostornumber }}人</p>
                 <p>コミュニティID:{{ $regulation->community_id }}</p>
             </div>
+            <div class="footer">
+                <a href="/communities/community_index">戻る</a>
+            </div>
         </div>
-        </div>
-        
-        <div class="footer">
-            <a href="/communities/index">戻る</a>
-        </div>
-    </body>
-</html>
+@endsection

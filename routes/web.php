@@ -13,7 +13,7 @@
 
 Route::get('/', 'ResultController@index');
 
-Route::get('/communities/community_create', 'CommunityController@createcommunity');
+Route::get('/communities/community_create', 'CommunityController@CreateCommunity');
 Route::post('/communities/created', 'CommunityController@CreatedCommunity');
 Route::get('/communities/community_index', 'CommunityController@index');
 Route::get('/communities/{community}', 'CommunityController@ShowCommunity');
@@ -28,8 +28,10 @@ Route::get('/players/{player}', 'CommunityController@ShowPlayer');
 
 
 Route::get('/results/result_create1', 'ResultController@create1');
-Route::post('/results/result_create3', 'ResultController@store');
-Route::get('/results/result_create2/{community}/{regulation}', 'ResultController@create2');
+Route::get('/results/result_create2', 'ResultController@create2');
+Route::get('/results/result_create3', 'ResultController@create3');
+Route::get('/results/result_create4/{result}', 'ResultController@create4');
+Route::post('/results/result_created', 'ResultController@created');
 Route::get('/results/{result}', 'ResultController@show');
 
 

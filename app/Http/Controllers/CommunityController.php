@@ -17,7 +17,7 @@ class CommunityController extends Controller
         return view('communities/community_index')->with(['communities' =>$community->get()]);
     }
     
-    public function createcommunity(Community $community)
+    public function CreateCommunity(Community $community)
     {
         return view('/communities/community_create');
     }
@@ -29,18 +29,17 @@ class CommunityController extends Controller
         return redirect('/communities/' . $community->id);
     }
     
-    public function ShowCommunity(Community $community, Player $player, Result $result,)
+    public function ShowCommunity(Community $community)
     {
-        $player_results = DB::table('player_result')->get();
-        return view('/communities/community_show',compact('player_results'))->with(['community' => $community, 'result' => $result]);
+        return view('/communities/community_show')->with(['community' => $community]);
     }
     
     public function CreateRegulation(Community $community)
     {
-        return view('/regulations/community_create')->with(['community' =>$community]);
+        return view('/regulations/regulation_create')->with(['community' => $community]);
     }
     
-    public function CreatedRegulation(Request $request, Community $community, Regulation $regulation)
+    public function CreatedRegulation(Request $request,Regulation $regulation)
     {
         $input = $request['regulation'];
         $regulation->fill($input)->save();
@@ -54,10 +53,10 @@ class CommunityController extends Controller
     
     public function CreatePlayer(Community $community)
     {
-        return view('/players/regulation_create')->with(['community' => $community]);
+        return view('/players/player_create')->with(['community' => $community]);
     }
     
-    public function CreatedPlayer(Request $request, Community $community, Player $player)
+    public function CreatedPlayer(Request $request, Player $player)
     {
         $input = $request['player'];
         $player->fill($input)->save();

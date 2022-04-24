@@ -4,21 +4,17 @@
     <div class='contents'>
         <h1>戦績登録</h1>
             <div class="title">
-                <form name='form'>
+                <form name='form' action='/results/result_create2'>
                     <h2>コミュニティを選択してください</h2>
                         <select class='select-community' id='community' name='community'>
                             @foreach ($communities as $community)
                                 <option value={{ $community->id }} >{{ $community->name }}</option>
                             @endforeach
                         </select>
-                    <h2>レギュレーションを選択してください</h2>
-                        <select class="used-regulation" name="result[used_regulation]" id='regulation'>
-                            @foreach ($regulations as $regulation)
-                                <option value={{ $regulation->id }} @if(old('regulation_id') == $regulation->id) selected @endif>{{ $regulation->id }}</option>
-                            @endforeach
-                        </select>
+                    
+                    <input type='submit' value='test'>
                 </form>
-                <button onclick="select_community()">保存</button>
+                <button>保存</button>
             </div>
             <script>
                 function select_community() {

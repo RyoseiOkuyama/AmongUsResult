@@ -12,6 +12,6 @@
                 @endforeach
             </p>
         </div>
-        <a href='/results/result_create1'>次の試合へ</a>
+        <a href='/results/result_create4/{{ $result->id }}'>次の試合へ</a>
     </div>
 @endsection

@@ -44,39 +44,39 @@
                             <td><a style="color:{{ $player->color }};" href="/players/{{ $player->id }}">{{ $player->name }}</a></td>
                             <td>{{ $player->results->count() }}試合</td>
                             @php
-                                $clues_match = DB::table('players')
+                                $player_clues_match = DB::table('players')
                                 ->rightJoin('player_result', 'players.id', '=', 'player_result.player_id')
                                 ->leftJoin('results', 'player_result.result_id', '=', 'results.id')
                                 ->where('players.id', $player->id)->whereIn('player_result.role', ['clue', 'sheriff'])
                                 ->count();
-                                $clues_win = DB::table('players')
+                                $player_clues_win = DB::table('players')
                                 ->rightJoin('player_result', 'players.id', '=', 'player_result.player_id')
                                 ->leftJoin('results', 'player_result.result_id', '=', 'results.id')
                                 ->where('players.id', $player->id)->whereIn('player_result.role', ['clue', 'sheriff'])->where('results.winner', 'clue')
                                 ->count();
-                                $impostors_match = DB::table('players')
+                                $player_impostors_match = DB::table('players')
                                 ->rightJoin('player_result', 'players.id', '=', 'player_result.player_id')
                                 ->leftJoin('results', 'player_result.result_id', '=', 'results.id')
                                 ->where('players.id', $player->id)->whereIn('player_result.role', ['impostor', 'madmate'])
                                 ->count();
-                                $impostors_win = DB::table('players')
+                                $player_impostors_win = DB::table('players')
                                 ->rightJoin('player_result', 'players.id', '=', 'player_result.player_id')
                                 ->leftJoin('results', 'player_result.result_id', '=', 'results.id')
                                 ->where('players.id', $player->id)->whereIn('player_result.role', ['impostor', 'madmate'])->where('results.winner', 'impostor')
                                 ->count();
-                            if($clues_win != 0){
-                                $clues_win = floor($clues_win / $clues_match * 100);
+                            if($player_clues_win != 0){
+                                $player_clues_win = floor($player_clues_win / $player_clues_match * 100);
                             } else {
-                                $clues_win = 0;
+                                $player_clues_win = 0;
                             }
-                            if($impostors_win != 0){
-                                $impostors_win = floor($impostors_win / $impostors_match * 100);
+                            if($player_impostors_win != 0){
+                                $player_impostors_win = floor($player_impostors_win / $player_impostors_match * 100);
                             } else {
-                                $impostors_win = 0;
+                                $player_impostors_win = 0;
                             }
                             @endphp 
-                            <td>{{ $clues_win }}%</td>
-                            <td>{{ $impostors_win }}%</td>
+                            <td>{{ $player_clues_win }}%</td>
+                            <td>{{ $player_impostors_win }}%</td>
                         </tr>
                     @endforeach
             </table>
@@ -84,7 +84,7 @@
         </div>
              
         <div>
-            <p><a href='/regulations/resultion_create/{{ $community->id }}'>レギュレーション登録</a></p>
+            <p><a href='/regulations/regulation_create/{{ $community->id }}'>レギュレーション登録</a></p>
         </div>
         <div>
             <p><a href='/players/player_create/{{ $community->id }}'>プレイヤー登録</a></p>
