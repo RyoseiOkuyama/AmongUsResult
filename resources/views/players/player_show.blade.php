@@ -8,7 +8,11 @@
                     <th>名前</th><th>試合数</th><th>クルー勝率</th><th>インポスター勝率</th>
                 </tr>
                 <tr>
-                    <td><a style="color:{{ $player->color }};" href="/players/{{ $player->id }}">{{ $player->name }}</a></td>
+                    @if($player->user_id ===Null)
+                        <td style="color:{{ $player->color }}">{{ $player->name }}</td>
+                    @else
+                        <td style="color:{{ $player->color }}">{{ $player->user->name }}</td>
+                    @endif
                     <td>{{ $player->results->count() }}試合</td>
                         @php
                             $player_clues_match = DB::table('players')
@@ -48,7 +52,7 @@
             </table>
         </div>
         <div>
-            <p><a href='/players/player_user'>ユーザー認証</a></p>
+            <p><a href='/players/player_link/{{ $player->id }}'>ユーザー認証</a></p>
         </div>
         <div class="footer">
             <a href="/communities/{{ $player->community_id }}">戻る</a>

@@ -12,9 +12,8 @@
                             @endforeach
                         </select>
                     
-                    <input type='submit' value='test'>
+                    <input type='submit' value='次へ'>
                 </form>
-                <button>保存</button>
             </div>
             <script>
                 function select_community() {

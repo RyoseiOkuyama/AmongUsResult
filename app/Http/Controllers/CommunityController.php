@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\Regulation;
 use App\Community;
 use App\Player;
@@ -66,6 +67,19 @@ class CommunityController extends Controller
     public function ShowPlayer(Player $player)
     {
         return view('/players/player_show')->with(['player' => $player]);
+    }
+    
+    public function LinkPlayer(Player $player)
+    {
+        $user_id = Auth::id();
+        return view('/players/player_link')->with(['player' => $player, 'user_id' => $user_id]);
+    }
+    
+    public function LinkedPlayer(Request $request, Player $player)
+    {
+        $input_player = $request['player'];
+        $player->fill($input_player)->save();
+        return redirect('/players/player_show/' . $player->id);
     }
 }
 

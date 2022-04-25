@@ -23,15 +23,18 @@ Route::post('/regulations/created', 'CommunityController@CreatedRegulation');
 Route::get('/regulations/{regulation}', 'CommunityController@ShowRegulation');
 
 Route::get('/players/player_create/{community}', 'CommunityController@CreatePlayer');
+Route::get('/players/player_link/{player}', 'CommunityController@LinkPlayer');
+Route::get('/players/player_show/{player}', 'CommunityController@ShowPlayer');
+Route::put('/players/{player}', 'CommunityController@LinkedPlayer');
 Route::post('/players/created', 'CommunityController@CreatedPlayer');
-Route::get('/players/{player}', 'CommunityController@ShowPlayer');
+
 
 
 Route::get('/results/result_create1', 'ResultController@create1');
 Route::get('/results/result_create2', 'ResultController@create2');
 Route::get('/results/result_create3', 'ResultController@create3');
 Route::get('/results/result_create4/{result}', 'ResultController@create4');
-Route::post('/results/result_created', 'ResultController@created');
+Route::put('/results/result_created', 'ResultController@created');
 Route::get('/results/{result}', 'ResultController@show');
 
 

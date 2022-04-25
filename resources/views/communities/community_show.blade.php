@@ -41,7 +41,11 @@
                 </tr>
                     @foreach($community->players as $player)
                         <tr>
-                            <td><a style="color:{{ $player->color }};" href="/players/{{ $player->id }}">{{ $player->name }}</a></td>
+                            @if($player->user_id ===Null)
+                                <td><a style="color:{{ $player->color }};" href="/players/player_show/{{ $player->id }}">{{ $player->name }}</a></td>
+                            @else
+                                <td><a style="color:{{ $player->color }};" href="/players/player_show/{{ $player->id }}">{{ $player->user->name }}</a></td>
+                            @endif
                             <td>{{ $player->results->count() }}試合</td>
                             @php
                                 $player_clues_match = DB::table('players')
