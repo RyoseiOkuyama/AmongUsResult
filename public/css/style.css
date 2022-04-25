@@ -1,0 +1,72 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: #d8d8d8;
+}
+
+.main {
+    padding-top: 200px;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+header {
+    position: fixed;
+    top: 0; 
+    background-color: black;
+    width: 100%;
+    z-index: 10;
+}
+
+.logo {
+    background-color: black;
+    float: left;
+    height: 80px;
+    width: auto;
+}
+
+.header_link, .user_link{
+    color: white;
+    padding: 30px 30px;
+    font-size: 20px;
+}
+
+.header_link {
+    float: left;
+}
+
+.user_link {
+    float: right;
+}
+
+.name {
+    font-size: 40px;
+    text-align: center;
+}
+
+.community_contents {
+    font-size:20px;
+    text-align: center;
+    padding: 20px;
+}
+
+.total_matchs {
+    text-align: center;
+}
+
+.percent_winner {
+    width: 50%;
+    text-align: center;
+    float: left;
+}
+
+.player_informations {
+    text-align: center;
+}
+
