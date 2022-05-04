@@ -13,24 +13,31 @@
 
 Route::get('/', 'ResultController@index');
 
-Route::get('/communities/community_create', 'CommunityController@CreateCommunity');
+/* communityのルーティング */
+Route::get('/communities/community_create', 'CommunityController@CreateCommunity')->middleware('auth');
 Route::post('/communities/created', 'CommunityController@CreatedCommunity');
 Route::get('/communities/community_index', 'CommunityController@index');
 Route::get('/communities/{community}', 'CommunityController@ShowCommunity');
 
-Route::get('/regulations/regulation_create/{community}', 'CommunityController@CreateRegulation');
+/*regulationのルーティング*/
+Route::get('/regulations/regulation_create/{community}', 'CommunityController@CreateRegulation')->middleware('auth');
 Route::post('/regulations/created', 'CommunityController@CreatedRegulation');
 Route::get('/regulations/{regulation}', 'CommunityController@ShowRegulation');
 
-Route::get('/players/player_create/{community}', 'CommunityController@CreatePlayer');
+/*playerのルーティング*/
+Route::get('/players/player_create/{community}', 'CommunityController@CreatePlayer')->middleware('auth');
+Route::get('/players/player_link/{player}', 'CommunityController@LinkPlayer');
+Route::get('/players/player_show/{player}', 'CommunityController@ShowPlayer');
+Route::get('/players/created/{player}', 'CommunityController@ShowPlayer');
+Route::get('/players/player_user', 'CommunityController@UserPlayer')->middleware('auth');
 Route::post('/players/created', 'CommunityController@CreatedPlayer');
-Route::get('/players/{player}', 'CommunityController@ShowPlayer');
+Route::put('/players/{player}', 'CommunityController@LinkedPlayer');
 
-
-Route::get('/results/result_create1', 'ResultController@create1');
+/*resultのルーティング*/
+Route::get('/results/result_create1', 'ResultController@create1')->middleware('auth');
 Route::get('/results/result_create2', 'ResultController@create2');
 Route::get('/results/result_create3', 'ResultController@create3');
-Route::get('/results/result_create4', 'ResultController@create4');
+Route::get('/results/result_create4/{result}', 'ResultController@create4');
 Route::post('/results/result_created', 'ResultController@created');
 Route::get('/results/{result}', 'ResultController@show');
 
