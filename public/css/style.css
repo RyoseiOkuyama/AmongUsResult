@@ -1,0 +1,165 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: #d8d8d8;
+}
+
+.main {
+    padding-top: 200px;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: solid 1px;
+    border-color: black;
+    text-align: center;
+    padding: 10px;
+}
+
+th {
+    background-color: #222222;
+    color: white;
+}
+
+form {
+    text-align: center;
+}
+header {
+    position: fixed;
+    top: 0; 
+    background-color: #111111;
+    width: 100%;
+    z-index: 10;
+}
+
+.back {
+    padding-top: 50px;
+    font-size: 25px;
+}
+
+.checkbox {
+    -moz-transform:		scale(1.4);
+	-webkit-transform:	scale(1.4);
+	transform:		scale(1.4);
+}
+
+.submit {
+    font-size: 20px;
+}
+/* headerのcss */
+.logo {
+    float: left;
+    height: 80px;
+    width: auto;
+}
+
+.header_link, .user_link{
+    color: white;
+    padding: 30px 30px;
+    font-size: 20px;
+}
+
+.header_link {
+    float: left;
+}
+
+.user_link {
+    float: right;
+}
+/*community_indexのcss */
+.communities {
+    float:left;
+    padding-left: 30px;
+}
+
+/*community_showのcss */
+
+
+.community-name {
+    font-size: 40px;
+    text-align: center;
+}
+
+.community-body {
+    font-size:20px;
+    text-align: center;
+    padding: 20px;
+}
+
+.total_matchs {
+    text-align: center;
+}
+
+.winner {
+    width: 50%;
+    text-align: center;
+    float: left;
+}
+/* result_create1のcss */
+.select-community {
+    font-size: 20px;
+}
+/* result_create2のcss */
+.players {
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.regulation {
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+.select-regulation {
+    font-size: 18px;
+}
+
+span {
+    color: red;
+}
+
+/* result_create3,4のcss */
+.select-roles {
+    width: 100%;
+}
+
+.select-role {
+    width: 33%;
+    float: left;
+    padding-bottom: 50px;
+}
+
+.winner {
+    padding-bottom: 50px;
+    width: 100%;
+}
+
+.select-winner {
+    font-size: 20px;
+}
+
+/* result_showのcss */
+.des-results {
+    text-align: center;
+}
