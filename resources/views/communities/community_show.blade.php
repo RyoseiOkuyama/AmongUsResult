@@ -1,20 +1,20 @@
-@extends('results.result_index')
+@extends('header')
     
 @section('content')
     <div class="contents">
             
-        <div class='name'>
+        <div class='community-name'>
             <h1>{{ $community->name }}</h1>
         </div>
-        <div class="community_contents">
+        <div class="community-body">
             <p>{{ $community->body }}</p>
         </div>
-        <div class="community_results">
-            <div class="total_matchs">
+        <div class="community-results">
+            <div class="total-matchs">
                 <h2>コミュニティ全体試合数</h2>
                 <h2>{{ $community->results->count() }}試合</h2>
             </div>
-            <div class="percent_winner">
+            <div class="winner">
                 <h2>クルー勝率</h2>
                     @php
                         if($community->results->where("winner", "clue")->count() != 0){
@@ -26,7 +26,7 @@
                     @endphp
                 <h3>{{ $community_clues_win }}%</h3>
             </div>
-            <div class="percent_winner">
+            <div class="winner">
                 <h2>インポスター勝率</h2>
                 <h3>{{ $community_impostors_win }}%</h3>
             </div>
@@ -48,25 +48,11 @@
                             @endif
                             <td>{{ $player->results->count() }}試合</td>
                             @php
-                                $player_clues_match = DB::table('players')
-                                ->rightJoin('player_result', 'players.id', '=', 'player_result.player_id')
-                                ->leftJoin('results', 'player_result.result_id', '=', 'results.id')
-                                ->where('players.id', $player->id)->whereIn('player_result.role', ['clue', 'sheriff'])
+                                $player_clues_match = $player->getResults(['sheriff', 'clue'], $player->id)->count();
+                                $player_clues_win = $player->getResults(['sheriff', 'clue'], $player->id)->where('results.winner', 'clue')
                                 ->count();
-                                $player_clues_win = DB::table('players')
-                                ->rightJoin('player_result', 'players.id', '=', 'player_result.player_id')
-                                ->leftJoin('results', 'player_result.result_id', '=', 'results.id')
-                                ->where('players.id', $player->id)->whereIn('player_result.role', ['clue', 'sheriff'])->where('results.winner', 'clue')
-                                ->count();
-                                $player_impostors_match = DB::table('players')
-                                ->rightJoin('player_result', 'players.id', '=', 'player_result.player_id')
-                                ->leftJoin('results', 'player_result.result_id', '=', 'results.id')
-                                ->where('players.id', $player->id)->whereIn('player_result.role', ['impostor', 'madmate'])
-                                ->count();
-                                $player_impostors_win = DB::table('players')
-                                ->rightJoin('player_result', 'players.id', '=', 'player_result.player_id')
-                                ->leftJoin('results', 'player_result.result_id', '=', 'results.id')
-                                ->where('players.id', $player->id)->whereIn('player_result.role', ['impostor', 'madmate'])->where('results.winner', 'impostor')
+                                $player_impostors_match = $player->getResults(['impostor', 'madmate'], $player->id)->count();
+                                $player_impostors_win = $player->getResults(['impostor', 'madmate'], $player->id)->where('results.winner', 'impostor')
                                 ->count();
                             if($player_clues_win != 0){
                                 $player_clues_win = floor($player_clues_win / $player_clues_match * 100);
@@ -88,11 +74,12 @@
         </div>
              
         <div>
-            <p><a href='/regulations/regulation_create/{{ $community->id }}'>レギュレーション登録</a></p>
+            <p class=><a href='/regulations/regulation_create/{{ $community->id }}'>レギュレーション登録</a></p>
         </div>
         <div>
             <p><a href='/players/player_create/{{ $community->id }}'>プレイヤー登録</a></p>
         </div>
+        <div class="back">
             <a href="/communities/community_index">戻る</a>
         </div>
 @endsection

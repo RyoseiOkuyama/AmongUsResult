@@ -1,4 +1,4 @@
-@extends('results.result_index')
+@extends('header')
     
 @section('content')
     <div class='contents'>
@@ -53,7 +53,7 @@
                 @endforeach
             </select>
             <input type="hidden" name="regulation[community_id]" value={{ $community->id }}>
-            <input type="submit" value="保存"/>
+            <input class="submit" type="submit" value="登録"/>
         </form>
         <div class="footer">
             <a href="/communities/{{ $community->id }}">戻る</a>

@@ -18,7 +18,7 @@ class CommunityController extends Controller
         return view('communities/community_index')->with(['communities' =>$community->get()]);
     }
     
-    public function CreateCommunity(Community $community)
+    public function CreateCommunity()
     {
         return view('/communities/community_create');
     }
@@ -61,7 +61,7 @@ class CommunityController extends Controller
     {
         $input = $request['player'];
         $player->fill($input)->save();
-        return redirect('/players/' . $player->id);
+        return redirect('/players/created/' . $player->id);
     }
     
     public function ShowPlayer(Player $player)
@@ -80,6 +80,12 @@ class CommunityController extends Controller
         $input_player = $request['player'];
         $player->fill($input_player)->save();
         return redirect('/players/player_show/' . $player->id);
+    }
+    
+    public function UserPlayer (Player $player, Result $result)
+    {
+        $user = Auth::user();
+        return view('/players/player_user')->with(['user' => $user, 'players' => $player->get(), 'results' => $result->get()]);
     }
 }
 

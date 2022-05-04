@@ -1,4 +1,4 @@
-@extends('results.result_index')
+@extends('header')
     
 @section('content')
     <div class="contents">
